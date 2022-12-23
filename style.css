@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+}
+
+.heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8em;
+    color: white;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading-line1 span {
+    color: red;
+}
+
+.about-link{
+    text-decoration:none;
+    margin-top: .5em;
+    color: red;
+    border: red solid .1em;
+    padding: .2em;
+    transform: translateY(0);
+    transition: transform 0.1s;  
+    border-radius: .2em;
+}
+
+.about-link:hover{
+      transform: translateY(-5px); 
+
+}
+
+
+.cat {
+    position: fixed;
+    top: 0;
+    right: 55%;
+    width: 0px;
+    height: 0px;
+    background-color: #ccc;
+  }
