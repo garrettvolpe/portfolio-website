@@ -1,3 +1,8 @@
+:root {
+    --mainColor: #FCA100;
+    --secondayColor: #FCA100;
+  }
+
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +13,7 @@ body{
 
 .heading {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.8em;
+    font-size: 3em;
     color: white;
     display: flex;
     height: 100vh;
@@ -18,14 +23,14 @@ body{
 }
 
 .heading-line1 span {
-    color: red;
+    color: var(--mainColor);
 }
 
 .about-link{
     text-decoration:none;
-    margin-top: .5em;
-    color: red;
-    border: red solid .1em;
+    margin-top: .8em;
+    color: var(--mainColor);
+    border: var(--mainColor) solid .1em;
     padding: .2em;
     transform: translateY(0);
     transition: transform 0.1s;  
@@ -33,7 +38,9 @@ body{
 }
 
 .about-link:hover{
-      transform: translateY(-5px); 
+      transform: translateY(-10px); 
+      background-color: var(--secondayColor);
+      color: black;
 
 }
 
@@ -46,3 +53,34 @@ body{
     height: 0px;
     background-color: #ccc;
   }
+
+  .heading-line1 {
+    position: relative;
+    left: -100%;
+    animation: slideInLeft 0.5s ease-out forwards;
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 0;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .heading-line2, .about-link {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    animation: fadeIn 1s linear 1s forwards;
+  }
+  
