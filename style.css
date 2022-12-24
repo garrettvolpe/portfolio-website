@@ -6,6 +6,7 @@
 *{
     margin: 0;
     padding: 0;
+    color:white;
 }
 body{
     background-color: black;
@@ -47,12 +48,20 @@ body{
 
 .cat {
     position: fixed;
-    top: 0;
+    top: -10%;
     right: 55%;
     width: 0px;
     height: 0px;
     background-color: #ccc;
-  }
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+body.scrolled .cat {
+  /* Set the opacity to 0 (fully transparent) */
+  opacity: 0;
+}
 
   .heading-line1 {
     position: relative;
@@ -82,5 +91,61 @@ body{
     opacity: 0;
     transition: all 0.5s ease-in-out;
     animation: fadeIn 1s linear 1s forwards;
+    z-index: 5;
+  }
+
+  .contact-me {
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+  
+  }
+
+
+  nav {
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    background-color: #333;
+    color: #fff;
+    border: var(--mainColor) 2px solid;
   }
   
+  nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+  }
+  
+  nav li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+  }
+  
+  nav a:hover {
+    color: #ccc;
+  }
+  
+#contact-me{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+
+
+  @media (max-width: 767px) {
+    .heading-line1 {
+      font-size: 10px;
+    }
+  }
