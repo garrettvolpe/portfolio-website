@@ -93,12 +93,7 @@ body.scrolled .cat {
     z-index: 5;
   }
 
-  .contact-me {
-  display: flex;
-  justify-content: center;
-  margin-left: 100px;
-  
-  }
+
 
 
   nav {
@@ -134,17 +129,82 @@ body.scrolled .cat {
     color: #ccc;
   }
   
-#contact-me{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
+
 
 
 #eyes, #eyes img {
   position: absolute;
 }
 
+
+
+
+
+
+
+.title {
+  background: black;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Montserrat', cursive;
+  font-weight: 100;
+  position: relative;
+}
+
+title::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  width: 600px;
+  margin-left: -300px;
+  margin-top: -220px;
+  height: 600px;
+  background: radial-gradient(50% 50%, ellipse closest-side, #444, black);
+  z-index: -1;
+}
+
+
+
+
+.about-me, .projects, .contact-me {
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.fade-in  {
+  opacity: 1;
+}
+
+
+footer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  background-color: #282828;
+}
+
+
+
+
+/* 
+media-query
+media-query
+media-query
+media-query
+media-query
+media-query
+media-query
+ */
 
 
 

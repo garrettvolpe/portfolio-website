@@ -1,6 +1,5 @@
 const anchor = document.getElementById('anchor');
 const rekt = anchor.getBoundingClientRect();
-console.log(rekt)
 const anchorX = rekt.left + rekt.width /2;
 const anchorY = rekt.top + rekt.height /2;
 
@@ -13,6 +12,7 @@ window.addEventListener('scroll', function() {
   } else {
     body.classList.remove('scrolled');
   }
+  fadeInAboutMe()
 });
 
 
@@ -28,11 +28,41 @@ function angle (cx,cy,ex,ey){
 document.addEventListener('mousemove', (e)=>{
   const mouseX = e.clientX
   const mouseY = e.clientY
+  if(mouseY > 810){
+    console.log("now")
+  }
+  console.log(mouseY)
   const atan2 = (anchorX, anchorY);
   const angleDeg = angle(mouseX,mouseY,anchorX,anchorY)
-  console.log(angleDeg)
   const eyes = document.querySelectorAll('.eye');
   eyes.forEach(eye => {
       eye.style.transform = `rotate(${angleDeg + 45}deg)`
   });
+});
+
+
+const aboutMeElement = document.querySelector('.about-me');
+const projectElement = document.querySelector('.projects');
+const contactElement = document.querySelector('.contact-me');
+
+function fadeInOnScroll(element) {
+  // Get the position of the about-me element
+  const postion = element.getBoundingClientRect();
+
+  // Check if the about-me element is in view
+  if (postion.top >= 0 && postion.bottom <= window.innerHeight + (window.innerHeight * .7)) {
+    // If the about-me element is in view, add the fade-in class
+      element.classList.add('fade-in');
+  }
+}
+
+// Add a scroll event listener to fade in the about-me element when it is in view
+window.addEventListener('scroll', ()=>{
+  fadeInOnScroll(aboutMeElement)
+});
+window.addEventListener('scroll', ()=>{
+  fadeInOnScroll(projectElement)
+});
+window.addEventListener('scroll', ()=>{
+  fadeInOnScroll(contactElement)
 });
