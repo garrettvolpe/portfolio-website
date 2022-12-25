@@ -1,6 +1,5 @@
 :root {
     --mainColor: #FCA100;
-    --secondayColor: #FCA100;
   }
 
 *{
@@ -40,7 +39,7 @@ body{
 
 .about-link:hover{
       transform: translateY(-10px); 
-      background-color: var(--secondayColor);
+      background-color: var(--mainColor);
       color: black;
 
 }
@@ -145,6 +144,8 @@ body.scrolled .cat {
 #eyes, #eyes img {
   position: absolute;
 }
+
+
 
 
 
