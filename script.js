@@ -1,5 +1,6 @@
 const anchor = document.getElementById('anchor');
 const rekt = anchor.getBoundingClientRect();
+console.log(rekt)
 const anchorX = rekt.left + rekt.width /2;
 const anchorY = rekt.top + rekt.height /2;
 
@@ -29,6 +30,7 @@ document.addEventListener('mousemove', (e)=>{
   const mouseY = e.clientY
   const atan2 = (anchorX, anchorY);
   const angleDeg = angle(mouseX,mouseY,anchorX,anchorY)
+  console.log(angleDeg)
   const eyes = document.querySelectorAll('.eye');
   eyes.forEach(eye => {
       eye.style.transform = `rotate(${angleDeg + 45}deg)`

@@ -47,8 +47,8 @@ body{
 
 .cat {
     position: fixed;
-    top: -10%;
-    right: 55%;
+    top: 12%;
+    right: 26%;
     width: 0px;
     height: 0px;
     background-color: #ccc;
