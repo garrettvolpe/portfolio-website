@@ -3,6 +3,8 @@ const rekt = anchor.getBoundingClientRect();
 const anchorX = rekt.left + rekt.width /2;
 const anchorY = rekt.top + rekt.height /2;
 
+
+const pageHeight = window.innerHeight;
 const body = document.querySelector('body');
 
 // fade cat out when scrolled.
@@ -12,7 +14,6 @@ window.addEventListener('scroll', function() {
   } else {
     body.classList.remove('scrolled');
   }
-  fadeInAboutMe()
 });
 
 
@@ -31,7 +32,6 @@ document.addEventListener('mousemove', (e)=>{
   if(mouseY > 810){
     console.log("now")
   }
-  console.log(mouseY)
   const atan2 = (anchorX, anchorY);
   const angleDeg = angle(mouseX,mouseY,anchorX,anchorY)
   const eyes = document.querySelectorAll('.eye');
@@ -41,16 +41,17 @@ document.addEventListener('mousemove', (e)=>{
 });
 
 
+const navbarElement = document.querySelector('.navbar');
 const aboutMeElement = document.querySelector('.about-me');
 const projectElement = document.querySelector('.projects');
 const contactElement = document.querySelector('.contact-me');
 
-function fadeInOnScroll(element) {
+function fadeInOnScroll(element, fadeStart) {
   // Get the position of the about-me element
   const postion = element.getBoundingClientRect();
 
   // Check if the about-me element is in view
-  if (postion.top >= 0 && postion.bottom <= window.innerHeight + (window.innerHeight * .7)) {
+  if (postion.top >= 0 && postion.bottom <= window.innerHeight + (window.innerHeight * fadeStart)) {
     // If the about-me element is in view, add the fade-in class
       element.classList.add('fade-in');
   }
@@ -58,11 +59,24 @@ function fadeInOnScroll(element) {
 
 // Add a scroll event listener to fade in the about-me element when it is in view
 window.addEventListener('scroll', ()=>{
-  fadeInOnScroll(aboutMeElement)
+  fadeInOnScroll(aboutMeElement, .4 )
 });
 window.addEventListener('scroll', ()=>{
-  fadeInOnScroll(projectElement)
+  fadeInOnScroll(projectElement, .9)
 });
 window.addEventListener('scroll', ()=>{
-  fadeInOnScroll(contactElement)
+  fadeInOnScroll(contactElement, .4)
 });
+
+
+// lock the nav bar to top of screen
+window.addEventListener('scroll', () => {
+  currentHeight = window.pageYOffset;
+  
+  if( currentHeight > pageHeight){
+    navbarElement.classList.add('navbarToTop');
+  }
+  if(currentHeight < pageHeight){
+    navbarElement.classList.remove('navbarToTop');
+  }
+})
