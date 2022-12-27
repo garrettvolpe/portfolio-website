@@ -14,7 +14,7 @@
 </head>
 <body>
  <div class="heading" id="heading">
-        <div class="heading-line1">Hello, I'm <span>Garrett</span>.</div>
+        <div class="heading-line1">Hello, I'm <span>Garrett Volpe</span>.</div>
         <div class="heading-line2">I'm a full stack web developer.</div>
         <a href="#about-me" class="about-link">
             View my work.
@@ -28,22 +28,20 @@
         </div>
 </div>
 
-<div class="navbar">
+<div class="navbar" id="navbar">
     <nav>
-        <ul>
           <li><a href="#heading">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#about-me">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact-me">Contact</a></li>
-        </ul>
       </nav>
       
 </div>
 <div class="about-me" id="about-me">
-    <h2 class="title">About Me</h2>
+    <h2 class="title about-me-title">About Me</h2>
     <div class="about-container">
         <div class="item1">
-             <p>As a full stack developer, I am deeply committed to the philosophy of life-long learning and have a passion for JavaScript, React, and all things web development. The combination of creativity, logic, technology, and the endless possibilities for learning and growth in this field drive my excitement and passion for web development. In my free time, I enjoy staying active and fit through martial arts and playing the drums. These activities not only help me to stay focused and energized, but also bring balance to my life and work.</p>
+             <p>As a full stack developer, I am deeply committed to the philosophy of life-long learning and have a passion for JavaScript, React, and all things web development. The combination of creativity, logic, technology, and the endless possibilities for learning and growth in this field drive my excitement and passion for web development. In my free time, I enjoy staying active, training martial arts and playing the drums. These activities not only help me to stay focused and energized, but also bring balance to my life and work.</p>
         </div>
         <div class="item2">
             <div class="skills-container">
@@ -81,7 +79,6 @@
         </div>
 </div>
 </div>
-
 <div class="projects" id="projects">
     <h2 class="title">Projects</h2>
     <div class="project project1">
@@ -109,7 +106,7 @@
 <div class="contact-me" id="contact-me">
     <h2 class="title">Contact Me</h2>
     <div class="contact-card" >
-        <form>
+        <form id="contactForm">
           <label for="name">Name:</label><br>
           <input type="text" id="name" name="name"><br>
           <label for="email">Email:</label><br>
@@ -123,9 +120,18 @@
 </div>
 <footer class="footer">
     <p class="copyright">GARRETT VOLPE ©2022</p>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/garrett-volpe/">
+        <img src="/images/linkedinLogo.png" alt="linkedin Logo">
+        </a>
+        <a href="https://github.com/garrettvolpe">
+            <img src="/images/gitLogo.png" alt="linkedin Logo">
+        </a>
+ 
+    </div>
 </footer>
 
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>

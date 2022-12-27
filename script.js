@@ -42,7 +42,7 @@ document.addEventListener('mousemove', (e)=>{
 
 
 const navbarElement = document.querySelector('.navbar');
-const aboutMeElement = document.querySelector('.about-me');
+const aboutMeElement = document.querySelector('.about-me-title');
 const projectElement = document.querySelector('.projects');
 const contactElement = document.querySelector('.contact-me');
 
@@ -59,7 +59,7 @@ function fadeInOnScroll(element, fadeStart) {
 
 // Add a scroll event listener to fade in the about-me element when it is in view
 window.addEventListener('scroll', ()=>{
-  fadeInOnScroll(aboutMeElement, .4 )
+  fadeInOnScroll(aboutMeElement, 0 )
 });
 window.addEventListener('scroll', ()=>{
   fadeInOnScroll(projectElement, .9)
@@ -69,14 +69,15 @@ window.addEventListener('scroll', ()=>{
 });
 
 
-// lock the nav bar to top of screen
-window.addEventListener('scroll', () => {
-  currentHeight = window.pageYOffset;
-  
-  if( currentHeight > pageHeight){
-    navbarElement.classList.add('navbarToTop');
-  }
-  if(currentHeight < pageHeight){
-    navbarElement.classList.remove('navbarToTop');
-  }
-})
+
+const contactCard = document.querySelector('.contact-card');
+const form = document.querySelector('#contactForm');
+form.addEventListener('submit', (event) => {
+  form.reset();
+  event.preventDefault();
+  const message = document.createElement('p');
+  message.classList.add("notificationMessage")
+  message.innerText = 'Email successfully sent! Thank you.';
+  contactCard.append(message);
+  window.scrollBy(0, 100);
+});

@@ -33,7 +33,7 @@ body{
     border: var(--mainColor) solid .1em;
     padding: .2em;
     transform: translateY(0);
-    transition: transform 0.1s;  
+    transition: transform 0.05s;  
     border-radius: .2em;
 }
 
@@ -41,9 +41,7 @@ body{
       transform: translateY(-10px); 
       background-color: var(--mainColor);
       color: black;
-
 }
-
 
 .cat {
     position: fixed;
@@ -62,7 +60,7 @@ body.scrolled .cat {
   opacity: 0;
 }
 
-  .heading-line1 {
+.heading-line1 {
     position: relative;
     left: -100%;
     animation: slideInLeft 0.5s ease-out forwards;
@@ -86,7 +84,7 @@ body.scrolled .cat {
     }
   }
   
-  .heading-line2, .about-link {
+.heading-line2, .about-link {
     opacity: 0;
     transition: all 0.5s ease-in-out;
     animation: fadeIn 1s linear 1s forwards;
@@ -95,30 +93,36 @@ body.scrolled .cat {
 
 .navbar{
   transition: 1 ease-in;
-
 }
 
+.navbar{
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3rem;
+  border-bottom: 1px solid #1a1a1a;
+  background-color: rgba(40,40,40,0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 4px rgb(0 0 0 / 30%);
+  z-index: 99999999999;
+}
 
   nav {
     display: flex;
+    height: 3.5em;
     width: 100vw;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     background-color: #333;
     color: #fff;
     border: var(--mainColor) 2px solid;
   }
-  
-  nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    width: 100%;
-  }
+
   
   nav li {
+    list-style: none;
     margin: 0 10px;
   }
   
@@ -179,8 +183,9 @@ body.scrolled .cat {
   font-family: 'Montserrat', cursive;
   font-weight: 100;
   position: relative;
-  font-size: 3em;
+  font-size: 3.5em;
   text-decoration: underline;
+  text-decoration-color: var(--mainColor);
 }
 
 title::before {
@@ -206,10 +211,18 @@ title::before {
   background-size: cover;
   background-position: center;
   border-radius: 10%;
+  transform: scale(1); 
+  transition: transform 0.5s ease-in-out; 
+}
 
+
+.card:hover{
+  transform: scale(1.1);
 }
 
 .container {
+display: flex;
+flex-direction: column;
 border: black 2px solid ;
 border-radius: 10px;
 margin-right: 47%;
@@ -249,10 +262,6 @@ width: 50%;
 
 .card1{
   background-image: url("images/camp.jpg");
-
-}
-
-.project2{
 }
 
 .card2{
@@ -261,10 +270,15 @@ width: 50%;
   align-items:flex-start;
 }
 
+
 .about-me, .projects, .contact-me {
-  height: 100%;
+  padding-top: 3rem;
+}
+
+.about-me.title .projects .contact-me{
   opacity: 0;
   transition: opacity 1s;
+
 }
 
 .fade-in  {
@@ -330,8 +344,24 @@ footer{
   border-bottom: var(--mainColor) 2px solid;
 }
 
+.notificationMessage{
+  text-align: center;
+  width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 6rem;
+  border-color: #4caf50;
+  color: #4caf50;
+  font-size: 1.5em;
+}
 
-
+.social-links img {
+  max-height: 40px;
+  max-width: 50px;
+}
 
 /* 
 media-query
@@ -344,20 +374,14 @@ media-query
  */
 
 
- .navbarToTop {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-  z-index: 10;
-  transition: 1 ease-in;
+.aboutMeFix{
+  margin-top: 1.5em;
 }
 
 
 
   @media (max-width: 767px) {
     .heading-line1 {
-      font-size: 10px;
+      /* font-size: 10px; */
     }
   }
