@@ -11,6 +11,23 @@ body{
     background-color: black;
 }
 
+.backdrop{
+
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 308%;
+    background-color: #0f0d0df7;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+  }
+
+
 .heading {
     font-family: 'Montserrat', sans-serif;
     font-size: 3em;
@@ -138,14 +155,14 @@ body.scrolled .cat {
   
 
   .skills-container{
-    width: 20vw;
-    margin-left: 50%;
+    width: 30vw;
+    margin-left: 40%;
   }
 
   .skills-list{
     display: flex;
     flex-wrap: wrap;
-    gap: 30%;
+    gap: 20%;
   }
 
   .skills-list li {
@@ -172,7 +189,6 @@ body.scrolled .cat {
 
 
 .title {
-  background: black;
   display: block;
   padding: 20px;
   text-decoration: none;
@@ -305,7 +321,7 @@ label {
   margin-top: 10px;
 }
 
-input[type="text"], textarea {
+input[type="text"],input[type="email"], textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;

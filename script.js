@@ -74,10 +74,72 @@ const contactCard = document.querySelector('.contact-card');
 const form = document.querySelector('#contactForm');
 form.addEventListener('submit', (event) => {
   form.reset();
+  if (contactCard.lastChild.tagName === 'P'){
+    contactCard.lastChild.remove();
+  }
   event.preventDefault();
   const message = document.createElement('p');
   message.classList.add("notificationMessage")
   message.innerText = 'Email successfully sent! Thank you.';
   contactCard.append(message);
-  window.scrollBy(0, 100);
+  window.scrollBy(0, 150);
+});
+
+
+
+// particals floating for background
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80, density: { enable: true, value_area: 800 } },
+    color: { value: "#fca100" },
+    shape: {
+      type: "circle",
+      stroke: { width: 0, color: "#000000" },
+      polygon: { nb_sides: 5 },
+      image: { src: "img/github.svg", width: 100, height: 100 }
+    },
+    opacity: {
+      value: 0.28409315098761817,
+      random: false,
+      anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+    },
+    size: {
+      value: 3,
+      random: true,
+      anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+    },
+    line_linked: {
+      enable: true,
+      distance: 112.2388442605866,
+      color: "#fca100",
+      opacity: 0.10422178395625899,
+      width: 2.5654592973848365
+    },
+    move: {
+      enable: true,
+      speed: 3,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: { enable: false, rotateX: 600, rotateY: 1200 }
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "push" },
+      resize: true
+    },
+    modes: {
+      grab: { distance: 400, line_linked: { opacity: 1 } },
+      bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+      repulse: { distance: 284.2108682236011, duration: 0.4 },
+      push: { particles_nb: 4 },
+      remove: { particles_nb: 2 }
+    }
+  },
+  retina_detect: true
 });
