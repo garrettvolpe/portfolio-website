@@ -222,8 +222,8 @@ title::before {
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  height: 30em;
-  width: 50em;
+  height: 25em;
+  width: 45em;
   background-size: cover;
   background-position: center;
   border-radius: 10%;
