@@ -43,8 +43,8 @@ document.addEventListener('mousemove', (e)=>{
 
 const navbarElement = document.querySelector('.navbar');
 const aboutMeElement = document.querySelector('.about-me-title');
-const projectElement = document.querySelector('.projects');
-const contactElement = document.querySelector('.contact-me');
+const projectElement = document.querySelector('.projects-title');
+const contactElement = document.querySelector('.contact-title');
 
 function fadeInOnScroll(element, fadeStart) {
   // Get the position of the about-me element
@@ -59,13 +59,13 @@ function fadeInOnScroll(element, fadeStart) {
 
 // Add a scroll event listener to fade in the about-me element when it is in view
 window.addEventListener('scroll', ()=>{
-  fadeInOnScroll(aboutMeElement, 0 )
+  fadeInOnScroll(aboutMeElement, 0)
 });
 window.addEventListener('scroll', ()=>{
-  fadeInOnScroll(projectElement, .9)
+  fadeInOnScroll(projectElement, 0)
 });
 window.addEventListener('scroll', ()=>{
-  fadeInOnScroll(contactElement, .4)
+  fadeInOnScroll(contactElement, 0)
 });
 
 
